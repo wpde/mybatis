@@ -18,9 +18,22 @@ import org.junit.Test;
 */
 public class DemoTest {
 	
+	public SqlSession getSession(){
+		String resource ="mybatis.config.xml";
+		InputStream is =null;
+		SqlSessionFactory factory =null;
+		try {
+			is = Resources.getResourceAsStream(resource );
+			factory = new SqlSessionFactoryBuilder().build(is); 
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		return  factory.openSession();
+	}
+	//传统方式
 	@Test
 	public void test() throws IOException {
-		//1.更具配置文件，利用SqlSessionFactoryBuilder创建SqlSessionFactory
+		//1.更据配置文件，利用SqlSessionFactoryBuilder创建SqlSessionFactory
 		String resource ="mybatis.config.xml";
 		InputStream is = Resources.getResourceAsStream(resource );
 		SqlSessionFactory factory = new SqlSessionFactoryBuilder().build(is); 
@@ -29,5 +42,13 @@ public class DemoTest {
 		//3.利用session对象操作数据库
 		Object obj = session.selectOne("getEmpById", 1);
 		System.out.println(obj);
+	}
+	
+	@Test
+	public void test2() {
+		SqlSession session = this.getSession();
+		EmployeeDao mapper = session.getMapper(EmployeeDao.class);
+		Employee emp = mapper.getEmpById(1);
+		System.out.println(emp.getLastName());
 	}
 }
