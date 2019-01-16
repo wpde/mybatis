@@ -51,4 +51,33 @@ public class DemoTest {
 		Employee emp = mapper.getEmpById(1);
 		System.out.println(emp.getLastName());
 	}
+	
+	@Test
+	public void test3() {
+		
+		/**
+		 * 增删改测试
+		 *1: mybatis允许增删改直接定义返回结果
+		 * integer、long、boolean
+		 * 
+		 * 2：需要手动提交事务，或者获取session对象时设置true/false
+		 * 
+		 */
+		SqlSession session = this.getSession();
+		EmployeeDao mapper = session.getMapper(EmployeeDao.class);
+		
+		Employee emp = new Employee(null,"insert","123@q.com","1");
+		mapper.addEmp(emp);
+		System.out.println(emp.getId());
+		
+//		Employee emp = new Employee(2,"update","123@q.com","1");
+//		boolean res = mapper.updateBYId(emp);
+//		System.out.println(res);
+		
+//		Employee emp = new Employee(2,"update","123@q.com","1");
+//		int res = mapper.deleteById(emp);
+//		System.out.println(res);
+		session.commit();
+	}
+	
 }

@@ -9,6 +9,27 @@
 		url：网络资源或者磁盘路径下资源
 	 -->
 	<properties resource="db.properties" />
+	
+	<!-- 
+		mybatis设置
+		<settings>
+		</settings> -->
+		
+	<!-- 别名标签 -->
+	<typeAliases>
+		<package name="demo1"/>
+	</typeAliases>
+	
+	
+	<!-- 类型处理器
+		mybatis将java类型和数据库类型进行映射
+	 -->	
+	<typeHandlers></typeHandlers>
+	
+	<!-- 可对mybatis四大对象的任意方法进行介入（动态代理） -->
+	<!-- <plugins></plugins> -->
+	
+	<!-- 环境 -->
 	<environments default="development">
 		<environment id="development">
 			<transactionManager type="JDBC" />
@@ -20,6 +41,8 @@
 			</dataSource>
 		</environment>
 	</environments>
+	
+	
 	<!-- 将我们写好的sql映射文件（EmployeeMapper.xml）一定要注册到全局配置文件（mybatis-config.xml）中 -->
 	<mappers>
 		<mapper resource="EmployeeMapper.xml" />

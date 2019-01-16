@@ -9,4 +9,7 @@ package demo1;
 */
 public interface EmployeeDao {
 	public Employee getEmpById(int id);
+	public void addEmp(Employee employee);
+	public int deleteById(Employee employee);
+	public boolean updateBYId(Employee employee);
 }
