@@ -1,8 +1,18 @@
 -------------目录--------------
-demo1:环境搭建、
+demo1:环境搭建、配置文件、映射文件
 
 
 -------------熟记--------------
-两个重要的配置文件：
-1、mybatis全局配置文件：包括数据库连接信息、事物管理器信息、系统运行环境信息
-2、sql映射文件：sql语句映射信息
+1、两个重要的配置文件：
+	mybatis全局配置文件：包括数据库连接信息、事物管理器信息、系统运行环境信息
+	sql映射文件：sql语句映射信息
+
+2、mybatis核心API
+	SqlSessionFactoryBuilder：创建SqlSessionFactory的实例，创建完后被丢弃
+	SqlSessionFactory：应用程序核心，创建SqlSession对象，应用执行期间一直存在
+	SqlSession：SqlSession对象来执行所有已映射的sql语句，每一个线程都有自己的sqlsession对象
+
+3、参数传递
+	单个参数传递：直接使用#{name}
+	多个参数：mybatis会将参数封装成一个map，使用#{0}，#{1}或者#{param1}，#{param2}或者
+			pojo类、Map<key,val>
