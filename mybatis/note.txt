@@ -14,5 +14,19 @@ demo1:环境搭建、配置文件、映射文件
 
 3、参数传递
 	单个参数传递：直接使用#{name}
-	多个参数：mybatis会将参数封装成一个map，使用#{0}，#{1}或者#{param1}，#{param2}或者
-			pojo类、Map<key,val>
+	多个参数：mybatis会将参数封装成一个map，使用#{0}，#{1}或者#{param1}，#{param2}、
+	命名参数：使用@param注解
+	POJO:属性
+	Map:key
+	#与$的区别：#将参数当做字符串的形式自动添加" "，$将参数直接显示成SQL
+	参数处理： javaType、jdbcType、mode、numericScale等
+	
+	
+
+-------------错误--------------
+1、mysql数据库，sql使用$接收参数，查询时没有加引号
+	mysql中单引号是代表字符不需要还编辑了，如果不是字符还需要mysql进行一个类型判断操作速度变慢
+	原本是VARCHAR类型,不加引号,需要加多一个转换操作,将INT转换VARCHAR
+
+
+	

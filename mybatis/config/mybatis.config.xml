@@ -28,7 +28,7 @@
 	<!-- <plugins></plugins> -->
 	
 	<!-- 环境 -->
-	<environments default="oracleDB">
+	<environments default="mysqlDB">
 		<environment id="mysqlDB">
 			<transactionManager type="JDBC" />
 			<dataSource type="POOLED">

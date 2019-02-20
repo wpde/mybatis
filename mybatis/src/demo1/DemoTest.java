@@ -78,4 +78,14 @@ public class DemoTest {
 		session.commit();
 	}
 	
+	/**
+	 * 参数传递：#与$
+	 */
+	@Test
+	public void test4() {
+		SqlSession session = this.getSession();
+		EmployeeDao mapper = session.getMapper(EmployeeDao.class);
+		Employee empByIdAndGenter = mapper.getEmpByIdAndGenter(1, "a");
+		System.out.println(empByIdAndGenter.getLastName());
+	}
 }
