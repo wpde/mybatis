@@ -49,4 +49,12 @@ public Employee getEmpById(Integer id);
 		<!-- select * from tbl_employee where id=#{0} and gender=#{1} -->
 		select * from tbl_employee where id=#{id} and gender='${genter}'
 	</select>
+	
+	<select id="getEmployeeByName" resultType="map">
+		select * from tbl_employee where lastName like '%${lastName}%'
+	</select>
+	
+	<select id="getEmployeeByNameForMap" resultType="map">
+		select * from tbl_employee where lastName like '%${lastName}%'
+	</select>
 </mapper>

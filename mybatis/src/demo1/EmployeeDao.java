@@ -1,5 +1,9 @@
 package demo1;
 
+import java.util.List;
+import java.util.Map;
+
+import org.apache.ibatis.annotations.MapKey;
 import org.apache.ibatis.annotations.Param;
 
 /**  
@@ -15,4 +19,8 @@ public interface EmployeeDao {
 	public void addEmp(Employee employee);
 	public int deleteById(Employee employee);
 	public boolean updateBYId(Employee employee);
+	@MapKey("lastName")
+	public Map<String,Employee>  getEmployeeByNameForMap(@Param("lastName")String lastName);
+	
+	
 }

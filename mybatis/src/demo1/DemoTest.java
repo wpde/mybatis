@@ -3,6 +3,8 @@ package demo1;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.List;
+import java.util.Map;
 
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
@@ -87,5 +89,17 @@ public class DemoTest {
 		EmployeeDao mapper = session.getMapper(EmployeeDao.class);
 		Employee empByIdAndGenter = mapper.getEmpByIdAndGenter(1, "a");
 		System.out.println(empByIdAndGenter.getLastName());
+	}
+	
+	/**
+	 * ·µ»ØÒ»¸ömap
+	 */
+	@Test
+	public void test5() {
+		SqlSession session = this.getSession();
+		EmployeeDao mapper = session.getMapper(EmployeeDao.class);
+		Map<String, Employee> employeeByNameForMap = mapper.getEmployeeByNameForMap("insert");
+		System.out.println(employeeByNameForMap.keySet());
+
 	}
 }
