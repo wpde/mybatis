@@ -12,8 +12,12 @@
 	
 	<!-- 
 		mybatis设置
+	-->
 		<settings>
-		</settings> -->
+			<!-- 设置延迟加载 -->
+			<setting name="lazyLoadingEnabled" value="true"/>
+			<setting name="aggressiveLazyLoading" value="false"/>
+		</settings>
 		
 	<!-- 别名标签 -->
 	<typeAliases>

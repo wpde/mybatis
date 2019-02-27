@@ -10,8 +10,11 @@ import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 import org.junit.Test;
 
+import demo2.bean.Department;
 import demo2.bean.Employee;
+import demo2.dao.DepartmentMapper;
 import demo2.dao.EmployeeMapper;
+import oracle.net.aso.d;
 
 /**  
 * @Description: TODO(这里用一句话描述这个类的作用)  
@@ -29,7 +32,40 @@ public class MyBatisTest {
 		EmployeeMapper employeeMapper = session.getMapper(EmployeeMapper.class);
 		List<Employee> list = employeeMapper.getEmp();
 		for (Employee employee : list) {
-			System.out.println(employee);
+			System.out.println(employee.getDept());
 		}
 	}
+	
+	/**
+	 * 集合封装
+	 */
+	@Test
+	public void test2() throws IOException {
+		InputStream in=Resources.getResourceAsStream("mybatis.config.xml");
+		SqlSessionFactory sessionFactory = new SqlSessionFactoryBuilder().build(in);
+		SqlSession session = sessionFactory.openSession();
+		DepartmentMapper departmentMapper = session.getMapper(DepartmentMapper.class);
+		 List<Department> ds = departmentMapper.getDepartmentByName("测试");
+		for (Department department : ds) {
+			System.out.println(department);
+			System.out.println(department.getEmps());
+		}
+	}
+	
+	/**
+	 * 查询条件包含多个参数封装成map
+	 */
+	@Test
+	public void test3() throws IOException {
+		InputStream in=Resources.getResourceAsStream("mybatis.config.xml");
+		SqlSessionFactory sessionFactory = new SqlSessionFactoryBuilder().build(in);
+		SqlSession session = sessionFactory.openSession();
+		DepartmentMapper departmentMapper = session.getMapper(DepartmentMapper.class);
+		 List<Department> ds = departmentMapper.getDepartmentByName("测试");
+		for (Department department : ds) {
+			System.out.println(department);
+			System.out.println(department.getEmps());
+		}
+	}
+	
 }

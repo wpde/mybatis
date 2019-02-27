@@ -14,14 +14,21 @@
 		<!-- <result property="dept.id"  column="d_id"/>
 		<result property="dept.departmentName"  column="departmentName"/> -->
 		
-		<association property="dept"   javaType="demo2.bean.Department">
+		<!-- <association property="dept"   javaType="demo2.bean.Department">
 			<id property="id" column="d_id"/>
 			<result property="departmentName" column="departmentName"/>
-		</association>
+		</association> -->
+		
+		<association property="dept" select="demo2.dao.DepartmentMapper.getDepartmentById" 
+					column="d_id" />
 	</resultMap>
 	<select id="getEmp"  resultMap="EmployeeMap" >
 		select e.id,e.lastName,e.email,e.gender,e.d_id,d.departmentName 
 			from tbl_employee e, tbl_dept d
 			where e.d_id = d.id
+	</select>
+	
+	<select id="getEmpByDId" resultType="demo2.bean.Employee">
+		select * from tbl_employee where d_id=#{id}
 	</select>
 </mapper>
