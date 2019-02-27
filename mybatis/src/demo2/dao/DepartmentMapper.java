@@ -17,4 +17,5 @@ public interface DepartmentMapper {
 	public Department getDepartmentById(Integer id);
 	
 	public List<Department> getDepartmentByName(@Param("departmentName")String departmentName);
+	
 }

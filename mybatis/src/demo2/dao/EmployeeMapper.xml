@@ -31,4 +31,8 @@
 	<select id="getEmpByDId" resultType="demo2.bean.Employee">
 		select * from tbl_employee where d_id=#{id}
 	</select>
+	
+	<select id="getEmpByDId2" resultType="demo2.bean.Employee">
+		select * from tbl_employee where d_id=#{d_id} and id=#{id}
+	</select>
 </mapper>

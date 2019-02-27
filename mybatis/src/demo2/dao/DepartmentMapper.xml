@@ -19,8 +19,11 @@
 			<result property="gender" column="gender"/>
 		</collection> -->
 		
-		<collection property="emps" select="demo2.dao.EmployeeMapper.getEmpByDId" 
-			column="id" />
+		<!-- <collection property="emps" select="demo2.dao.EmployeeMapper.getEmpByDId" 
+			column="id" /> -->
+		<!-- 多参数处理 -->
+		<collection property="emps" select="demo2.dao.EmployeeMapper.getEmpByDId2" 
+			column="{d_id=id,id=id}" />
 	</resultMap>
 	<select id="getDepartmentByName" resultMap="MyDepart">
 		select * from tbl_dept where departmentName ='${departmentName}'
