@@ -1,36 +1,36 @@
--------------Ä¿Â¼--------------
-demo1:»·¾³´î½¨¡¢ÅäÖÃÎÄ¼þ¡¢Ó³ÉäÎÄ¼þ
-demo2£º·µ»Ø½á¹ûresultMap¡¢
+-------------ç›®å½•--------------
+demo1:çŽ¯å¢ƒæ­å»ºã€é…ç½®æ–‡ä»¶ã€æ˜ å°„æ–‡ä»¶
+demo2ï¼šè¿”å›žç»“æžœresultMapã€
 
 
--------------Êì¼Ç--------------
-1¡¢Á½¸öÖØÒªµÄÅäÖÃÎÄ¼þ£º
-	mybatisÈ«¾ÖÅäÖÃÎÄ¼þ£º°üÀ¨Êý¾Ý¿âÁ¬½ÓÐÅÏ¢¡¢ÊÂÎï¹ÜÀíÆ÷ÐÅÏ¢¡¢ÏµÍ³ÔËÐÐ»·¾³ÐÅÏ¢
-	sqlÓ³ÉäÎÄ¼þ£ºsqlÓï¾äÓ³ÉäÐÅÏ¢
+-------------ç†Ÿè®°--------------
+1ã€ä¸¤ä¸ªé‡è¦çš„é…ç½®æ–‡ä»¶ï¼š
+	mybatiså…¨å±€é…ç½®æ–‡ä»¶ï¼šåŒ…æ‹¬æ•°æ®åº“è¿žæŽ¥ä¿¡æ¯ã€äº‹ç‰©ç®¡ç†å™¨ä¿¡æ¯ã€ç³»ç»Ÿè¿è¡ŒçŽ¯å¢ƒä¿¡æ¯
+	sqlæ˜ å°„æ–‡ä»¶ï¼šsqlè¯­å¥æ˜ å°„ä¿¡æ¯
 
-2¡¢mybatisºËÐÄAPI
-	SqlSessionFactoryBuilder£º´´½¨SqlSessionFactoryµÄÊµÀý£¬´´½¨Íêºó±»¶ªÆú
-	SqlSessionFactory£ºÓ¦ÓÃ³ÌÐòºËÐÄ£¬´´½¨SqlSession¶ÔÏó£¬Ó¦ÓÃÖ´ÐÐÆÚ¼äÒ»Ö±´æÔÚ
-	SqlSession£ºSqlSession¶ÔÏóÀ´Ö´ÐÐËùÓÐÒÑÓ³ÉäµÄsqlÓï¾ä£¬Ã¿Ò»¸öÏß³Ì¶¼ÓÐ×Ô¼ºµÄsqlsession¶ÔÏó
+2ã€mybatisæ ¸å¿ƒAPI
+	SqlSessionFactoryBuilderï¼šåˆ›å»ºSqlSessionFactoryçš„å®žä¾‹ï¼Œåˆ›å»ºå®ŒåŽè¢«ä¸¢å¼ƒ
+	SqlSessionFactoryï¼šåº”ç”¨ç¨‹åºæ ¸å¿ƒï¼Œåˆ›å»ºSqlSessionå¯¹è±¡ï¼Œåº”ç”¨æ‰§è¡ŒæœŸé—´ä¸€ç›´å­˜åœ¨
+	SqlSessionï¼šSqlSessionå¯¹è±¡æ¥æ‰§è¡Œæ‰€æœ‰å·²æ˜ å°„çš„sqlè¯­å¥ï¼Œæ¯ä¸€ä¸ªçº¿ç¨‹éƒ½æœ‰è‡ªå·±çš„sqlsessionå¯¹è±¡
 
-3¡¢²ÎÊý´«µÝ
-	µ¥¸ö²ÎÊý´«µÝ£ºÖ±½ÓÊ¹ÓÃ#{name}
-	¶à¸ö²ÎÊý£ºmybatis»á½«²ÎÊý·â×°³ÉÒ»¸ömap£¬Ê¹ÓÃ#{0}£¬#{1}»òÕß#{param1}£¬#{param2}¡¢
-	ÃüÃû²ÎÊý£ºÊ¹ÓÃ@param×¢½â
-	POJO:ÊôÐÔ
+3ã€å‚æ•°ä¼ é€’
+	å•ä¸ªå‚æ•°ä¼ é€’ï¼šç›´æŽ¥ä½¿ç”¨#{name}
+	å¤šä¸ªå‚æ•°ï¼šmybatisä¼šå°†å‚æ•°å°è£…æˆä¸€ä¸ªmapï¼Œä½¿ç”¨#{0}ï¼Œ#{1}æˆ–è€…#{param1}ï¼Œ#{param2}ã€
+	å‘½åå‚æ•°ï¼šä½¿ç”¨@paramæ³¨è§£
+	POJO:å±žæ€§
 	Map:key
-	#Óë$µÄÇø±ð£º#½«²ÎÊýµ±×ö×Ö·û´®µÄÐÎÊ½×Ô¶¯Ìí¼Ó" "£¬$½«²ÎÊýÖ±½ÓÏÔÊ¾³ÉSQL
-	²ÎÊý´¦Àí£º javaType¡¢jdbcType¡¢mode¡¢numericScaleµÈ
+	#ä¸Ž$çš„åŒºåˆ«ï¼š#å°†å‚æ•°å½“åšå­—ç¬¦ä¸²çš„å½¢å¼è‡ªåŠ¨æ·»åŠ " "ï¼Œ$å°†å‚æ•°ç›´æŽ¥æ˜¾ç¤ºæˆSQL
+	å‚æ•°å¤„ç†ï¼š javaTypeã€jdbcTypeã€modeã€numericScaleç­‰
 
-4¡¢·µ»Ø½á¹û·â×°
+4ã€è¿”å›žç»“æžœå°è£…
 	
 	
 	
 
--------------´íÎó--------------
-1¡¢mysqlÊý¾Ý¿â£¬sqlÊ¹ÓÃ$½ÓÊÕ²ÎÊý£¬²éÑ¯Ê±Ã»ÓÐ¼ÓÒýºÅ
-	mysqlÖÐµ¥ÒýºÅÊÇ´ú±í×Ö·û²»ÐèÒª»¹±à¼­ÁË£¬Èç¹û²»ÊÇ×Ö·û»¹ÐèÒªmysql½øÐÐÒ»¸öÀàÐÍÅÐ¶Ï²Ù×÷ËÙ¶È±äÂý
-	Ô­±¾ÊÇVARCHARÀàÐÍ,²»¼ÓÒýºÅ,ÐèÒª¼Ó¶àÒ»¸ö×ª»»²Ù×÷,½«INT×ª»»VARCHAR
+-------------é”™è¯¯--------------
+1ã€mysqlæ•°æ®åº“ï¼Œsqlä½¿ç”¨$æŽ¥æ”¶å‚æ•°ï¼ŒæŸ¥è¯¢æ—¶æ²¡æœ‰åŠ å¼•å·
+	mysqlä¸­å•å¼•å·æ˜¯ä»£è¡¨å­—ç¬¦ä¸éœ€è¦è¿˜ç¼–è¾‘äº†ï¼Œå¦‚æžœä¸æ˜¯å­—ç¬¦è¿˜éœ€è¦mysqlè¿›è¡Œä¸€ä¸ªç±»åž‹åˆ¤æ–­æ“ä½œé€Ÿåº¦å˜æ…¢
+	åŽŸæœ¬æ˜¯VARCHARç±»åž‹,ä¸åŠ å¼•å·,éœ€è¦åŠ å¤šä¸€ä¸ªè½¬æ¢æ“ä½œ,å°†INTè½¬æ¢VARCHAR
 
 
 	

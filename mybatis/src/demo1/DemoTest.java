@@ -46,6 +46,7 @@ public class DemoTest {
 		System.out.println(obj);
 	}
 	
+	//基于Mapper接口
 	@Test
 	public void test2() {
 		SqlSession session = this.getSession();

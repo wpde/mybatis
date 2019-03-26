@@ -1,103 +1,103 @@
-µ¥¸ö²ÎÊı£ºmybatis²»»á×öÌØÊâ´¦Àí£¬
-	#{²ÎÊıÃû/ÈÎÒâÃû}£ºÈ¡³ö²ÎÊıÖµ¡£
+å•ä¸ªå‚æ•°ï¼šmybatisä¸ä¼šåšç‰¹æ®Šå¤„ç†ï¼Œ
+	#{å‚æ•°å/ä»»æ„å}ï¼šå–å‡ºå‚æ•°å€¼ã€‚
 	
-¶à¸ö²ÎÊı£ºmybatis»á×öÌØÊâ´¦Àí¡£
-	¶à¸ö²ÎÊı»á±»·â×°³É Ò»¸ömap£¬
-		key£ºparam1...paramN,»òÕß²ÎÊıµÄË÷ÒıÒ²¿ÉÒÔ
-		value£º´«ÈëµÄ²ÎÊıÖµ
-	#{}¾ÍÊÇ´ÓmapÖĞ»ñÈ¡Ö¸¶¨µÄkeyµÄÖµ£»
+å¤šä¸ªå‚æ•°ï¼šmybatisä¼šåšç‰¹æ®Šå¤„ç†ã€‚
+	å¤šä¸ªå‚æ•°ä¼šè¢«å°è£…æˆ ä¸€ä¸ªmapï¼Œ
+		keyï¼šparam1...paramN,æˆ–è€…å‚æ•°çš„ç´¢å¼•ä¹Ÿå¯ä»¥
+		valueï¼šä¼ å…¥çš„å‚æ•°å€¼
+	#{}å°±æ˜¯ä»mapä¸­è·å–æŒ‡å®šçš„keyçš„å€¼ï¼›
 	
-	Òì³££º
+	å¼‚å¸¸ï¼š
 	org.apache.ibatis.binding.BindingException: 
 	Parameter 'id' not found. 
 	Available parameters are [1, 0, param1, param2]
-	²Ù×÷£º
-		·½·¨£ºpublic Employee getEmpByIdAndLastName(Integer id,String lastName);
-		È¡Öµ£º#{id},#{lastName}
+	æ“ä½œï¼š
+		æ–¹æ³•ï¼špublic Employee getEmpByIdAndLastName(Integer id,String lastName);
+		å–å€¼ï¼š#{id},#{lastName}
 
-¡¾ÃüÃû²ÎÊı¡¿£ºÃ÷È·Ö¸¶¨·â×°²ÎÊıÊ±mapµÄkey£»@Param("id")
-	¶à¸ö²ÎÊı»á±»·â×°³É Ò»¸ömap£¬
-		key£ºÊ¹ÓÃ@Param×¢½âÖ¸¶¨µÄÖµ
-		value£º²ÎÊıÖµ
-	#{Ö¸¶¨µÄkey}È¡³ö¶ÔÓ¦µÄ²ÎÊıÖµ
+ã€å‘½åå‚æ•°ã€‘ï¼šæ˜ç¡®æŒ‡å®šå°è£…å‚æ•°æ—¶mapçš„keyï¼›@Param("id")
+	å¤šä¸ªå‚æ•°ä¼šè¢«å°è£…æˆ ä¸€ä¸ªmapï¼Œ
+		keyï¼šä½¿ç”¨@Paramæ³¨è§£æŒ‡å®šçš„å€¼
+		valueï¼šå‚æ•°å€¼
+	#{æŒ‡å®šçš„key}å–å‡ºå¯¹åº”çš„å‚æ•°å€¼
 
 
-POJO£º
-Èç¹û¶à¸ö²ÎÊıÕıºÃÊÇÎÒÃÇÒµÎñÂß¼­µÄÊı¾İÄ£ĞÍ£¬ÎÒÃÇ¾Í¿ÉÒÔÖ±½Ó´«Èëpojo£»
-	#{ÊôĞÔÃû}£ºÈ¡³ö´«ÈëµÄpojoµÄÊôĞÔÖµ	
+POJOï¼š
+å¦‚æœå¤šä¸ªå‚æ•°æ­£å¥½æ˜¯æˆ‘ä»¬ä¸šåŠ¡é€»è¾‘çš„æ•°æ®æ¨¡å‹ï¼Œæˆ‘ä»¬å°±å¯ä»¥ç›´æ¥ä¼ å…¥pojoï¼›
+	#{å±æ€§å}ï¼šå–å‡ºä¼ å…¥çš„pojoçš„å±æ€§å€¼	
 
-Map£º
-Èç¹û¶à¸ö²ÎÊı²»ÊÇÒµÎñÄ£ĞÍÖĞµÄÊı¾İ£¬Ã»ÓĞ¶ÔÓ¦µÄpojo£¬²»¾­³£Ê¹ÓÃ£¬ÎªÁË·½±ã£¬ÎÒÃÇÒ²¿ÉÒÔ´«Èëmap
-	#{key}£ºÈ¡³ömapÖĞ¶ÔÓ¦µÄÖµ
+Mapï¼š
+å¦‚æœå¤šä¸ªå‚æ•°ä¸æ˜¯ä¸šåŠ¡æ¨¡å‹ä¸­çš„æ•°æ®ï¼Œæ²¡æœ‰å¯¹åº”çš„pojoï¼Œä¸ç»å¸¸ä½¿ç”¨ï¼Œä¸ºäº†æ–¹ä¾¿ï¼Œæˆ‘ä»¬ä¹Ÿå¯ä»¥ä¼ å…¥map
+	#{key}ï¼šå–å‡ºmapä¸­å¯¹åº”çš„å€¼
 
-TO£º
-Èç¹û¶à¸ö²ÎÊı²»ÊÇÒµÎñÄ£ĞÍÖĞµÄÊı¾İ£¬µ«ÊÇ¾­³£ÒªÊ¹ÓÃ£¬ÍÆ¼öÀ´±àĞ´Ò»¸öTO£¨Transfer Object£©Êı¾İ´«Êä¶ÔÏó
+TOï¼š
+å¦‚æœå¤šä¸ªå‚æ•°ä¸æ˜¯ä¸šåŠ¡æ¨¡å‹ä¸­çš„æ•°æ®ï¼Œä½†æ˜¯ç»å¸¸è¦ä½¿ç”¨ï¼Œæ¨èæ¥ç¼–å†™ä¸€ä¸ªTOï¼ˆTransfer Objectï¼‰æ•°æ®ä¼ è¾“å¯¹è±¡
 Page{
 	int index;
 	int size;
 }
 
-========================Ë¼¿¼================================	
+========================æ€è€ƒ================================	
 public Employee getEmp(@Param("id")Integer id,String lastName);
-	È¡Öµ£ºid==>#{id/param1}   lastName==>#{param2}
+	å–å€¼ï¼šid==>#{id/param1}   lastName==>#{param2}
 
 public Employee getEmp(Integer id,@Param("e")Employee emp);
-	È¡Öµ£ºid==>#{param1}    lastName===>#{param2.lastName/e.lastName}
+	å–å€¼ï¼šid==>#{param1}    lastName===>#{param2.lastName/e.lastName}
 
-##ÌØ±ğ×¢Òâ£ºÈç¹ûÊÇCollection£¨List¡¢Set£©ÀàĞÍ»òÕßÊÇÊı×é£¬
-		 Ò²»áÌØÊâ´¦Àí¡£Ò²ÊÇ°Ñ´«ÈëµÄlist»òÕßÊı×é·â×°ÔÚmapÖĞ¡£
-			key£ºCollection£¨collection£©,Èç¹ûÊÇList»¹¿ÉÒÔÊ¹ÓÃÕâ¸ökey(list)
-				Êı×é(array)
+##ç‰¹åˆ«æ³¨æ„ï¼šå¦‚æœæ˜¯Collectionï¼ˆListã€Setï¼‰ç±»å‹æˆ–è€…æ˜¯æ•°ç»„ï¼Œ
+		 ä¹Ÿä¼šç‰¹æ®Šå¤„ç†ã€‚ä¹Ÿæ˜¯æŠŠä¼ å…¥çš„listæˆ–è€…æ•°ç»„å°è£…åœ¨mapä¸­ã€‚
+			keyï¼šCollectionï¼ˆcollectionï¼‰,å¦‚æœæ˜¯Listè¿˜å¯ä»¥ä½¿ç”¨è¿™ä¸ªkey(list)
+				æ•°ç»„(array)
 public Employee getEmpById(List<Integer> ids);
-	È¡Öµ£ºÈ¡³öµÚÒ»¸öidµÄÖµ£º   #{list[0]}
+	å–å€¼ï¼šå–å‡ºç¬¬ä¸€ä¸ªidçš„å€¼ï¼š   #{list[0]}
 	
-========================½áºÏÔ´Âë£¬mybatisÔõÃ´´¦Àí²ÎÊı==========================
-×Ü½á£º²ÎÊı¶àÊ±»á·â×°map£¬ÎªÁË²»»ìÂÒ£¬ÎÒÃÇ¿ÉÒÔÊ¹ÓÃ@ParamÀ´Ö¸¶¨·â×°Ê±Ê¹ÓÃµÄkey£»
-#{key}¾Í¿ÉÒÔÈ¡³ömapÖĞµÄÖµ£»
+========================ç»“åˆæºç ï¼Œmybatisæ€ä¹ˆå¤„ç†å‚æ•°==========================
+æ€»ç»“ï¼šå‚æ•°å¤šæ—¶ä¼šå°è£…mapï¼Œä¸ºäº†ä¸æ··ä¹±ï¼Œæˆ‘ä»¬å¯ä»¥ä½¿ç”¨@Paramæ¥æŒ‡å®šå°è£…æ—¶ä½¿ç”¨çš„keyï¼›
+#{key}å°±å¯ä»¥å–å‡ºmapä¸­çš„å€¼ï¼›
 
 (@Param("id")Integer id,@Param("lastName")String lastName);
-ParamNameResolver½âÎö²ÎÊı·â×°mapµÄ£»
-//1¡¢names£º{0=id, 1=lastName}£»¹¹ÔìÆ÷µÄÊ±ºò¾ÍÈ·¶¨ºÃÁË
+ParamNameResolverè§£æå‚æ•°å°è£…mapçš„ï¼›
+//1ã€namesï¼š{0=id, 1=lastName}ï¼›æ„é€ å™¨çš„æ—¶å€™å°±ç¡®å®šå¥½äº†
 
-	È·¶¨Á÷³Ì£º
-	1.»ñÈ¡Ã¿¸ö±êÁËparam×¢½âµÄ²ÎÊıµÄ@ParamµÄÖµ£ºid£¬lastName£»  ¸³Öµ¸øname;
-	2.Ã¿´Î½âÎöÒ»¸ö²ÎÊı¸ømapÖĞ±£´æĞÅÏ¢£º£¨key£º²ÎÊıË÷Òı£¬value£ºnameµÄÖµ£©
-		nameµÄÖµ£º
-			±ê×¢ÁËparam×¢½â£º×¢½âµÄÖµ
-			Ã»ÓĞ±ê×¢£º
-				1.È«¾ÖÅäÖÃ£ºuseActualParamName£¨jdk1.8£©£ºname=²ÎÊıÃû
-				2.name=map.size()£»Ïàµ±ÓÚµ±Ç°ÔªËØµÄË÷Òı
+	ç¡®å®šæµç¨‹ï¼š
+	1.è·å–æ¯ä¸ªæ ‡äº†paramæ³¨è§£çš„å‚æ•°çš„@Paramçš„å€¼ï¼šidï¼ŒlastNameï¼›  èµ‹å€¼ç»™name;
+	2.æ¯æ¬¡è§£æä¸€ä¸ªå‚æ•°ç»™mapä¸­ä¿å­˜ä¿¡æ¯ï¼šï¼ˆkeyï¼šå‚æ•°ç´¢å¼•ï¼Œvalueï¼šnameçš„å€¼ï¼‰
+		nameçš„å€¼ï¼š
+			æ ‡æ³¨äº†paramæ³¨è§£ï¼šæ³¨è§£çš„å€¼
+			æ²¡æœ‰æ ‡æ³¨ï¼š
+				1.å…¨å±€é…ç½®ï¼šuseActualParamNameï¼ˆjdk1.8ï¼‰ï¼šname=å‚æ•°å
+				2.name=map.size()ï¼›ç›¸å½“äºå½“å‰å…ƒç´ çš„ç´¢å¼•
 	{0=id, 1=lastName,2=2}
 				
 
-args¡¾1£¬"Tom",'hello'¡¿:
+argsã€1ï¼Œ"Tom",'hello'ã€‘:
 
 public Object getNamedParams(Object[] args) {
     final int paramCount = names.size();
-    //1¡¢²ÎÊıÎªnullÖ±½Ó·µ»Ø
+    //1ã€å‚æ•°ä¸ºnullç›´æ¥è¿”å›
     if (args == null || paramCount == 0) {
       return null;
      
-    //2¡¢Èç¹ûÖ»ÓĞÒ»¸öÔªËØ£¬²¢ÇÒÃ»ÓĞParam×¢½â£»args[0]£ºµ¥¸ö²ÎÊıÖ±½Ó·µ»Ø
+    //2ã€å¦‚æœåªæœ‰ä¸€ä¸ªå…ƒç´ ï¼Œå¹¶ä¸”æ²¡æœ‰Paramæ³¨è§£ï¼›args[0]ï¼šå•ä¸ªå‚æ•°ç›´æ¥è¿”å›
     } else if (!hasParamAnnotation && paramCount == 1) {
       return args[names.firstKey()];
       
-    //3¡¢¶à¸öÔªËØ»òÕßÓĞParam±ê×¢
+    //3ã€å¤šä¸ªå…ƒç´ æˆ–è€…æœ‰Paramæ ‡æ³¨
     } else {
       final Map<String, Object> param = new ParamMap<Object>();
       int i = 0;
       
-      //4¡¢±éÀúnames¼¯ºÏ£»{0=id, 1=lastName,2=2}
+      //4ã€éå†namesé›†åˆï¼›{0=id, 1=lastName,2=2}
       for (Map.Entry<Integer, String> entry : names.entrySet()) {
       
-      	//names¼¯ºÏµÄvalue×÷Îªkey;  names¼¯ºÏµÄkeyÓÖ×÷ÎªÈ¡ÖµµÄ²Î¿¼args[0]:args¡¾1£¬"Tom"¡¿:
+      	//namesé›†åˆçš„valueä½œä¸ºkey;  namesé›†åˆçš„keyåˆä½œä¸ºå–å€¼çš„å‚è€ƒargs[0]:argsã€1ï¼Œ"Tom"ã€‘:
       	//eg:{id=args[0]:1,lastName=args[1]:Tom,2=args[2]}
         param.put(entry.getValue(), args[entry.getKey()]);
         
         
         // add generic param names (param1, param2, ...)param
-        //¶îÍâµÄ½«Ã¿Ò»¸ö²ÎÊıÒ²±£´æµ½mapÖĞ£¬Ê¹ÓÃĞÂµÄkey£ºparam1...paramN
-        //Ğ§¹û£ºÓĞParam×¢½â¿ÉÒÔ#{Ö¸¶¨µÄkey}£¬»òÕß#{param1}
+        //é¢å¤–çš„å°†æ¯ä¸€ä¸ªå‚æ•°ä¹Ÿä¿å­˜åˆ°mapä¸­ï¼Œä½¿ç”¨æ–°çš„keyï¼šparam1...paramN
+        //æ•ˆæœï¼šæœ‰Paramæ³¨è§£å¯ä»¥#{æŒ‡å®šçš„key}ï¼Œæˆ–è€…#{param1}
         final String genericParamName = GENERIC_NAME_PREFIX + String.valueOf(i + 1);
         // ensure not to overwrite parameter named with @Param
         if (!names.containsValue(genericParamName)) {
@@ -109,36 +109,36 @@ public Object getNamedParams(Object[] args) {
     }
   }
 }
-===========================²ÎÊıÖµµÄ»ñÈ¡======================================
-#{}£º¿ÉÒÔ»ñÈ¡mapÖĞµÄÖµ»òÕßpojo¶ÔÏóÊôĞÔµÄÖµ£»
-${}£º¿ÉÒÔ»ñÈ¡mapÖĞµÄÖµ»òÕßpojo¶ÔÏóÊôĞÔµÄÖµ£»
+===========================å‚æ•°å€¼çš„è·å–======================================
+#{}ï¼šå¯ä»¥è·å–mapä¸­çš„å€¼æˆ–è€…pojoå¯¹è±¡å±æ€§çš„å€¼ï¼›
+${}ï¼šå¯ä»¥è·å–mapä¸­çš„å€¼æˆ–è€…pojoå¯¹è±¡å±æ€§çš„å€¼ï¼›
 
 
 select * from tbl_employee where id=${id} and last_name=#{lastName}
 Preparing: select * from tbl_employee where id=2 and last_name=?
-	Çø±ğ£º
-		#{}:ÊÇÒÔÔ¤±àÒëµÄĞÎÊ½£¬½«²ÎÊıÉèÖÃµ½sqlÓï¾äÖĞ£»PreparedStatement£»·ÀÖ¹sql×¢Èë
-		${}:È¡³öµÄÖµÖ±½ÓÆ´×°ÔÚsqlÓï¾äÖĞ£»»áÓĞ°²È«ÎÊÌâ£»
-		´ó¶àÇé¿öÏÂ£¬ÎÒÃÇÈ¥²ÎÊıµÄÖµ¶¼Ó¦¸ÃÈ¥Ê¹ÓÃ#{}£»
+	åŒºåˆ«ï¼š
+		#{}:æ˜¯ä»¥é¢„ç¼–è¯‘çš„å½¢å¼ï¼Œå°†å‚æ•°è®¾ç½®åˆ°sqlè¯­å¥ä¸­ï¼›PreparedStatementï¼›é˜²æ­¢sqlæ³¨å…¥
+		${}:å–å‡ºçš„å€¼ç›´æ¥æ‹¼è£…åœ¨sqlè¯­å¥ä¸­ï¼›ä¼šæœ‰å®‰å…¨é—®é¢˜ï¼›
+		å¤§å¤šæƒ…å†µä¸‹ï¼Œæˆ‘ä»¬å»å‚æ•°çš„å€¼éƒ½åº”è¯¥å»ä½¿ç”¨#{}ï¼›
 		
-		Ô­Éújdbc²»Ö§³ÖÕ¼Î»·ûµÄµØ·½ÎÒÃÇ¾Í¿ÉÒÔÊ¹ÓÃ${}½øĞĞÈ¡Öµ
-		±ÈÈç·Ö±í¡¢ÅÅĞò¡£¡£¡££»°´ÕÕÄê·İ·Ö±í²ğ·Ö
+		åŸç”Ÿjdbcä¸æ”¯æŒå ä½ç¬¦çš„åœ°æ–¹æˆ‘ä»¬å°±å¯ä»¥ä½¿ç”¨${}è¿›è¡Œå–å€¼
+		æ¯”å¦‚åˆ†è¡¨ã€æ’åºã€‚ã€‚ã€‚ï¼›æŒ‰ç…§å¹´ä»½åˆ†è¡¨æ‹†åˆ†
 			select * from ${year}_salary where xxx;
 			select * from tbl_employee order by ${f_name} ${order}
 
-#{}:¸ü·á¸»µÄÓÃ·¨£º
-	¹æ¶¨²ÎÊıµÄÒ»Ğ©¹æÔò£º
-	javaType¡¢ jdbcType¡¢ mode£¨´æ´¢¹ı³Ì£©¡¢ numericScale¡¢
-	resultMap¡¢ typeHandler¡¢ jdbcTypeName¡¢ expression£¨Î´À´×¼±¸Ö§³ÖµÄ¹¦ÄÜ£©£»
+#{}:æ›´ä¸°å¯Œçš„ç”¨æ³•ï¼š
+	è§„å®šå‚æ•°çš„ä¸€äº›è§„åˆ™ï¼š
+	javaTypeã€ jdbcTypeã€ modeï¼ˆå­˜å‚¨è¿‡ç¨‹ï¼‰ã€ numericScaleã€
+	resultMapã€ typeHandlerã€ jdbcTypeNameã€ expressionï¼ˆæœªæ¥å‡†å¤‡æ”¯æŒçš„åŠŸèƒ½ï¼‰ï¼›
 
-	jdbcTypeÍ¨³£ĞèÒªÔÚÄ³ÖÖÌØ¶¨µÄÌõ¼şÏÂ±»ÉèÖÃ£º
-		ÔÚÎÒÃÇÊı¾İÎªnullµÄÊ±ºò£¬ÓĞĞ©Êı¾İ¿â¿ÉÄÜ²»ÄÜÊ¶±ğmybatis¶ÔnullµÄÄ¬ÈÏ´¦Àí¡£±ÈÈçOracle£¨±¨´í£©£»
+	jdbcTypeé€šå¸¸éœ€è¦åœ¨æŸç§ç‰¹å®šçš„æ¡ä»¶ä¸‹è¢«è®¾ç½®ï¼š
+		åœ¨æˆ‘ä»¬æ•°æ®ä¸ºnullçš„æ—¶å€™ï¼Œæœ‰äº›æ•°æ®åº“å¯èƒ½ä¸èƒ½è¯†åˆ«mybatiså¯¹nullçš„é»˜è®¤å¤„ç†ã€‚æ¯”å¦‚Oracleï¼ˆæŠ¥é”™ï¼‰ï¼›
 		
-		JdbcType OTHER£ºÎŞĞ§µÄÀàĞÍ£»ÒòÎªmybatis¶ÔËùÓĞµÄnull¶¼Ó³ÉäµÄÊÇÔ­ÉúJdbcµÄOTHERÀàĞÍ£¬oracle²»ÄÜÕıÈ·´¦Àí;
+		JdbcType OTHERï¼šæ— æ•ˆçš„ç±»å‹ï¼›å› ä¸ºmybatiså¯¹æ‰€æœ‰çš„nulléƒ½æ˜ å°„çš„æ˜¯åŸç”ŸJdbcçš„OTHERç±»å‹ï¼Œoracleä¸èƒ½æ­£ç¡®å¤„ç†;
 		
-		ÓÉÓÚÈ«¾ÖÅäÖÃÖĞ£ºjdbcTypeForNull=OTHER£»oracle²»Ö§³Ö£»Á½ÖÖ°ì·¨
-		1¡¢#{email,jdbcType=OTHER};
-		2¡¢jdbcTypeForNull=NULL
+		ç”±äºå…¨å±€é…ç½®ä¸­ï¼šjdbcTypeForNull=OTHERï¼›oracleä¸æ”¯æŒï¼›ä¸¤ç§åŠæ³•
+		1ã€#{email,jdbcType=OTHER};
+		2ã€jdbcTypeForNull=NULL
 			<setting name="jdbcTypeForNull" value="NULL"/>
 			
 		
