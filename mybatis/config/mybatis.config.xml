@@ -20,9 +20,9 @@
 		</settings>
 		
 	<!-- 别名标签 -->
-	<typeAliases>
+	<!-- <typeAliases>
 		<package name="demo1"/>
-	</typeAliases>
+	</typeAliases> -->
 	
 	
 	<!-- 类型处理器mybatis将java类型和数据库类型进行映射 -->	
@@ -69,7 +69,8 @@
 	
 	<!-- 将我们写好的sql映射文件（EmployeeMapper.xml）一定要注册到全局配置文件（mybatis-config.xml）中 -->
 	<mappers>
-		<mapper resource="EmployeeMapper.xml" />
+		<mapper resource="UserDaoMapper.xml"/>
+		<package name="demo1.mapper.dao"/>
 		<package name="demo2.dao"/>
 	</mappers>
 </configuration>

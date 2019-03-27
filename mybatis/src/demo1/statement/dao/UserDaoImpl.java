@@ -26,7 +26,7 @@ public class UserDaoImpl implements UserDao {
 		SqlSessionFactory sqlSessionFactory;
 		SqlSession session = null;
 		try {
-			inputStream = Resources.getResourceAsStream("statementConfig.xml");
+			inputStream = Resources.getResourceAsStream("mybatis.config.xml");
 			sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
 			session = sqlSessionFactory.openSession();
 			session.insert("insertStatement", user);
