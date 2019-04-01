@@ -1,5 +1,7 @@
 -------------目录--------------
-demo1:环境搭建、配置文件、映射文件
+demo1:
+		基于Satatementid和Mapper代理方式的hello word。
+		
 demo2：返回结果resultMap、
 
 

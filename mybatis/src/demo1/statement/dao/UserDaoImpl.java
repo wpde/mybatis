@@ -19,7 +19,15 @@ import demo1.statement.pojo.User;
 *    
 */
 public class UserDaoImpl implements UserDao {
-
+	
+	/**
+	 * 运行流程简析：
+	 * SqlSessionFactoryBuilder().build()方法
+	 * 	1、将is流转换成XMLConfigBuilder对象：parser
+	 * 	2、再对parser对象进行解析成Configuration对象：configuration
+	 * Configuration对象包含了所有配置信息
+	 * 	3、调用build(configuration)方法返回DefaultSqlSessionFactory对象
+	 */
 	@Override
 	public void insertUser(User user) {
 		InputStream inputStream;
