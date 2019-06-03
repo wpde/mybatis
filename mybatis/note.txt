@@ -2,7 +2,7 @@
 demo1:
 		基于Satatementid和Mapper代理方式的hello word。
 		
-demo2：返回结果resultMap、
+demo2：返回结果resultMap、插件、分页pagehelper
 
 
 -------------熟记--------------
@@ -26,7 +26,11 @@ demo2：返回结果resultMap、
 
 4、返回结果封装
 	
-	
+5、插件开发
+	a：编写Interceptor实现类
+	b：使用@Intercepts注解完成插件签名
+	c：在配置文件注册插件	
+	多个插件执行顺序：plugin方法按顺序执行，intercept方法倒序执行
 	
 
 -------------错误--------------

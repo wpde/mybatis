@@ -10,6 +10,9 @@ import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 import org.junit.Test;
 
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
+
 import demo2.bean.Department;
 import demo2.bean.Employee;
 import demo2.dao.DepartmentMapper;
@@ -68,4 +71,20 @@ public class MyBatisTest {
 		}
 	}
 	
+	/**
+	 * 
+	 * pagehelper分页插件使用
+	 */
+	@Test
+	public void test4() throws IOException {
+		InputStream in=Resources.getResourceAsStream("mybatis.config.xml");
+		SqlSessionFactory sessionFactory = new SqlSessionFactoryBuilder().build(in);
+		SqlSession session = sessionFactory.openSession();
+		EmployeeMapper employeeMapper = session.getMapper(EmployeeMapper.class);
+		PageHelper.startPage(1, 3);
+		List<Employee> list = employeeMapper.getEmp();
+		System.out.println(list.size());
+		PageInfo page=new PageInfo(list);
+		System.out.println(page);
+	}
 }

@@ -10,26 +10,35 @@
 	 -->
 	<properties resource="db.properties" />
 	
-	<!-- 
-		mybatis设置
-	-->
-		<settings>
-			<!-- 设置延迟加载 -->
+	<!-- mybatis设置  -->
+	<!-- 	<settings>
+			设置延迟加载
 			<setting name="lazyLoadingEnabled" value="true"/>
 			<setting name="aggressiveLazyLoading" value="false"/>
-		</settings>
-		
+		</settings> -->
+	
 	<!-- 别名标签 -->
 	<!-- <typeAliases>
 		<package name="demo1"/>
 	</typeAliases> -->
-	
 	
 	<!-- 类型处理器mybatis将java类型和数据库类型进行映射 -->	
 	<typeHandlers></typeHandlers>
 	
 	<!-- 可对mybatis四大对象的任意方法进行介入（动态代理） -->
 	<!-- <plugins></plugins> -->
+	<!-- 插件设置 -->
+	<plugins>
+		<!-- <plugin interceptor="demo2.MyFirstPlugin" >
+			<property name="username" value="cofe"/>
+			<property name="password" value="123456"/> 
+		</plugin> -->
+		
+		<plugin interceptor="com.github.pagehelper.PageInterceptor">
+		</plugin>
+		
+	</plugins>
+	
 	
 	<!-- 环境 -->
 	<environments default="mysqlDB">
