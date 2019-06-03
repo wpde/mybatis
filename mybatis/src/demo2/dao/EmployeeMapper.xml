@@ -28,11 +28,8 @@
 			where e.d_id = d.id
 	</select>
 	
-	<select id="getEmpByDId" resultType="demo2.bean.Employee">
-		select * from tbl_employee where d_id=#{id}
-	</select>
-	
-	<select id="getEmpByDId2" resultType="demo2.bean.Employee">
-		select * from tbl_employee where d_id=#{d_id} and id=#{id}
-	</select>
+	<insert id="addEmp" parameterType="demo2.bean.Employee">
+		insert into tbl_employee(lastName,email,gender)
+		values(#{lastName},#{email},#{gender})
+	</insert>
 </mapper>

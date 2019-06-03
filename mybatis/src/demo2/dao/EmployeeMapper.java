@@ -12,6 +12,5 @@ import demo2.bean.Employee;
 */
 public interface EmployeeMapper {
 	public List<Employee> getEmp();
-	public List<Employee> getEmpByDId();	
-	public List<Employee> getEmpByDId2();	
+	public void addEmp(Employee employee);
 }

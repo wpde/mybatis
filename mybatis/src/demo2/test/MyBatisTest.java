@@ -5,6 +5,7 @@ import java.io.InputStream;
 import java.util.List;
 
 import org.apache.ibatis.io.Resources;
+import org.apache.ibatis.session.ExecutorType;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
@@ -76,7 +77,7 @@ public class MyBatisTest {
 	 * pagehelper分页插件使用
 	 */
 	@Test
-	public void test4() throws IOException {
+	public void testPageHelper() throws IOException {
 		InputStream in=Resources.getResourceAsStream("mybatis.config.xml");
 		SqlSessionFactory sessionFactory = new SqlSessionFactoryBuilder().build(in);
 		SqlSession session = sessionFactory.openSession();
@@ -86,5 +87,23 @@ public class MyBatisTest {
 		System.out.println(list.size());
 		PageInfo page=new PageInfo(list);
 		System.out.println(page);
+	}
+	
+	/**
+	 * 批量操作
+	 */
+	@Test
+	public void testBatch() throws IOException {
+		InputStream in=Resources.getResourceAsStream("mybatis.config.xml");
+		SqlSessionFactory sessionFactory = new SqlSessionFactoryBuilder().build(in);
+		//获取特定的session
+		SqlSession session = sessionFactory.openSession(ExecutorType.BATCH);
+		EmployeeMapper mapper = session.getMapper(EmployeeMapper.class);
+		
+		for(int i=1;i<100;i++) {
+			mapper.addEmp(new Employee("1", "a", "b"));
+		}
+		session.commit();
+		session.close();
 	}
 }
