@@ -12,6 +12,7 @@ import org.junit.Test;
 import com.mysql.jdbc.interceptors.SessionAssociationInterceptor;
 
 import demo1.mapper.dao.UserMapper;
+import demo1.mapper.pojo.User;
 
 /**  
 * @Description: 基于Mapper方式测试  
@@ -23,10 +24,19 @@ public class UserMapperTest {
 
 	/**
 	 * Test method for {@link demo1.mapper.dao.UserMapper#insertUser(demo1.mapper.pojo.User)}.
+	 * @throws IOException 
 	 */
 	@Test
-	public void testInsertUser() {
-		fail("Not yet implemented");
+	public void testInsertUser() throws IOException {
+		SqlSession session = new SqlSessionFactoryBuilder().build(Resources.getResourceAsStream("mybatis.config.xml")).openSession();
+		UserMapper userMapper = session.getMapper(UserMapper.class);
+		User user = new User();
+		user.setUsername("自增主键测试--mybatis");
+		userMapper.insertUser(user);
+		System.out.println(user.getId());
+		session.commit();
+		session.close();
+		
 	}
 
 	/**
@@ -85,10 +95,16 @@ public class UserMapperTest {
 
 	/**
 	 * Test method for {@link demo1.mapper.dao.UserMapper#selectUser()}.
+	 * @throws IOException 
 	 */
 	@Test
-	public void testSelectUser() {
-		fail("Not yet implemented");
+	public void testSelectUser() throws IOException {
+		SqlSession session = new SqlSessionFactoryBuilder().build(Resources.getResourceAsStream("mybatis.config.xml")).openSession();
+		UserMapper userMapper = session.getMapper(UserMapper.class);
+		User u=new User();
+		u.setId(1);
+		User user = userMapper.getUserById(u);
+		System.out.println(user);
 	}
 
 }

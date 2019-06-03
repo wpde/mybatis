@@ -3,12 +3,26 @@
  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="demo1.mapper.dao.UserMapper">
-	<insert id="insertUser" parameterType="demo1.mapper.pojo.User" >
+	<insert id="insertUser" parameterType="demo1.mapper.pojo.User" databaseId="mysql"
+		useGeneratedKeys="true" keyProperty="id">
 		insert into user(username,sex,birthday,address) 
 		values(#{username},#{sex},#{birthday},#{address})
+	</insert>
+	
+	
+	<insert id="insertUser" parameterType="demo1.mapper.pojo.User" databaseId="oracle">
+		insert into tbl_user(id,username) 
+		values(#{id},#{username})
+		<selectKey order="BEFORE" resultType="int" keyProperty="id" >
+			select seq_user.nextval from dual
+		</selectKey>
 	</insert>
 	
 	<delete id="deleteUser">
 		delete from user where id=#{id}
 	</delete>
+	
+	<select id="getUserById" resultType="demo1.mapper.pojo.User" >
+		select * from user where id=#{id}
+	</select>
 </mapper>

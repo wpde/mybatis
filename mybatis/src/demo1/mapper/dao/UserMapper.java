@@ -20,4 +20,6 @@ public interface UserMapper {
 	public void deleteUser(Integer id);
 	public void updateUser();
 	public List<User> selectUser();
+//	public User getUserById(int id);
+	public User getUserById(User id);
 }
