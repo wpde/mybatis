@@ -28,6 +28,12 @@
 			where e.d_id = d.id
 	</select>
 	
+	<select id="getEmpByDId"  resultType="demo2.bean.Employee" >
+		select e.id,e.lastName,e.email,e.gender,e.d_id 
+			from tbl_employee e where e.d_id =#{did}
+	</select>
+	
+	
 	<insert id="addEmp" parameterType="demo2.bean.Employee">
 		insert into tbl_employee(lastName,email,gender)
 		values(#{lastName},#{email},#{gender})

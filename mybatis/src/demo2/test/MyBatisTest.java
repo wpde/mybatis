@@ -28,8 +28,11 @@ import oracle.net.aso.d;
 */
 public class MyBatisTest {
 	
+	/**
+	 * 级联查询：一对一
+	 */
 	@Test
-	public void test1() throws IOException {
+	public void testGetEmp() throws IOException {
 		InputStream in=Resources.getResourceAsStream("mybatis.config.xml");
 		SqlSessionFactory sessionFactory = new SqlSessionFactoryBuilder().build(in);
 		SqlSession session = sessionFactory.openSession();
@@ -41,10 +44,10 @@ public class MyBatisTest {
 	}
 	
 	/**
-	 * 集合封装
+	 * 级联查询：一对多
 	 */
 	@Test
-	public void test2() throws IOException {
+	public void testGetDepartmentByName() throws IOException {
 		InputStream in=Resources.getResourceAsStream("mybatis.config.xml");
 		SqlSessionFactory sessionFactory = new SqlSessionFactoryBuilder().build(in);
 		SqlSession session = sessionFactory.openSession();
@@ -90,7 +93,7 @@ public class MyBatisTest {
 	}
 	
 	/**
-	 * 批量操作
+	 * 批量操作：ExecutorType.BATCH
 	 */
 	@Test
 	public void testBatch() throws IOException {
