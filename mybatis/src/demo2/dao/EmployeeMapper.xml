@@ -33,6 +33,10 @@
 			from tbl_employee e where e.d_id =#{did}
 	</select>
 	
+	<select id="getEmpByDId2" resultType="demo2.bean.Employee">
+		select * from tbl_employee where d_id=#{d_id} and id=#{id}
+	</select>
+	
 	
 	<insert id="addEmp" parameterType="demo2.bean.Employee">
 		insert into tbl_employee(lastName,email,gender)

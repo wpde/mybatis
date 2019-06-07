@@ -2,7 +2,13 @@
 demo1:
 		基于Satatementid和Mapper代理方式的hello word。
 		
-demo2：返回结果resultMap、插件、分页pagehelper、批量操作
+demo2：
+	级联查询：一对一、一对多
+	返回结果封装resultMap
+	批量操作
+	插件原理
+	分页pagehelper、rowbounds
+	
 
 
 -------------熟记--------------

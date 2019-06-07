@@ -20,11 +20,12 @@ public interface EmployeeMapper {
 	public List<Employee> getEmp();
 	public void addEmp(Employee employee);
 	/**
-	 * 
-	 * @Description: 根据部门id查询员工信息  
-	 * @param: @param dId
-	 * @param: @return      
-	 * @return: List<Employee>
+	 * 根据部门id查询员工信息 ，用于部门级联查询（一个参数）
 	 */
 	public List<Employee> getEmpByDId(Integer dId);
+	
+	/**
+	 * 根据部门id查询员工信息 ，用于部门级联查询（多个参数处理）
+	 */
+	public List<Employee> getEmpByDId2(Integer dId);
 }
