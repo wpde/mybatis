@@ -14,6 +14,8 @@ demo2：返回结果resultMap、插件、分页pagehelper、批量操作
 	SqlSessionFactoryBuilder：创建SqlSessionFactory的实例，创建完后被丢弃
 	SqlSessionFactory：应用程序核心，创建SqlSession对象，应用执行期间一直存在
 	SqlSession：SqlSession对象来执行所有已映射的sql语句，每一个线程都有自己的sqlsession对象
+	四大组件：executor、statementHandler、parameterHandler、resultHandler
+		
 
 3、参数传递
 	单个参数传递：直接使用#{name}
