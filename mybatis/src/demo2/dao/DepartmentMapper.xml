@@ -29,7 +29,7 @@
 		select * from tbl_dept where departmentName ='${departmentName}'
 	</select>
 	
-	<select id="getDepartmentByRowBounds" resultMap="MyDepart">
+	<select id="getDepartmentByRowBounds" resultType="demo2.bean.Department">
 		select * from tbl_dept 
 	</select>
 	

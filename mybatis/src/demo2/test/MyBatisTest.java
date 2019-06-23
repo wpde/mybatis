@@ -6,6 +6,7 @@ import java.util.List;
 
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.ExecutorType;
+import org.apache.ibatis.session.RowBounds;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
@@ -91,6 +92,18 @@ public class MyBatisTest {
 		PageInfo page=new PageInfo(list);
 		System.out.println(page);
 	}
+	
+	@Test
+	public void testRowBounds() throws IOException {
+		InputStream in=Resources.getResourceAsStream("mybatis.config.xml");
+		SqlSessionFactory sessionFactory = new SqlSessionFactoryBuilder().build(in);
+		SqlSession session = sessionFactory.openSession();
+		DepartmentMapper mapper = session.getMapper(DepartmentMapper.class);
+		RowBounds rowBounds =new RowBounds(0, 2);
+		List<Department> list = mapper.getDepartmentByRowBounds(rowBounds);
+		System.out.println(list.size());
+	}
+	
 	
 	/**
 	 * ÅúÁ¿²Ù×÷£ºExecutorType.BATCH

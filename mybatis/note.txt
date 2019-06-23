@@ -1,7 +1,7 @@
 -------------目录--------------
 demo1:
-		基于Satatementid和Mapper代理方式的hello word。
-		
+	基于Satatementid和Mapper代理方式的hello word。
+	初始化流程分析（mybatis原理分析）
 demo2：
 	级联查询：一对一、一对多
 	返回结果封装resultMap
