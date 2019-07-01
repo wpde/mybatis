@@ -3,6 +3,7 @@ package demo1.mapper.test;
 import static org.junit.Assert.fail;
 
 import java.io.IOException;
+import java.util.List;
 
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
@@ -103,8 +104,11 @@ public class UserMapperTest {
 		UserMapper userMapper = session.getMapper(UserMapper.class);
 		User u=new User();
 		u.setId(1);
-		User user = userMapper.getUserById(u);
-		System.out.println(user);
+		u.setUsername("张%");
+		List<User> list = userMapper.selectUserByLike(u);
+		System.out.println(list);
+//		User user = userMapper.getUserById(u);
+//		System.out.println(user);
 	}
 
 }

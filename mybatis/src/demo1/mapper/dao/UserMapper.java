@@ -18,8 +18,11 @@ import demo1.mapper.pojo.User;
 public interface UserMapper {
 	public void insertUser(User user);
 	public void deleteUser(Integer id);
-	public void updateUser();
+	public void updateUser(User user);
 	public List<User> selectUser();
-//	public User getUserById(int id);
-	public User getUserById(User id);
+	public User getUserById(int id);
+//	public User getUserById(User id);
+	
+//	if test 中条件参数可以当做string类型，调用string的方法
+	public List<User> selectUserByLike(User user);
 }

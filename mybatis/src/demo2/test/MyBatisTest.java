@@ -2,6 +2,7 @@ package demo2.test;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.ArrayList;
 import java.util.List;
 
 import org.apache.ibatis.io.Resources;
@@ -119,6 +120,11 @@ public class MyBatisTest {
 		for(int i=1;i<100;i++) {
 			mapper.addEmp(new Employee("1", "a", "b"));
 		}
+		List l=new ArrayList<>();
+		for (Object object : l) {
+			
+		}
+		
 		session.commit();
 		session.close();
 	}
